@@ -1,5 +1,4 @@
 {
-  "type": "module",
   "name": "googlechrome-biograf",
   "version": "12.1.6",
   "description": "A sample video PWA for the web",
