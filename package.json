@@ -64,11 +64,11 @@
   "dependencies": {
     "adaro": "^1.0.4",
     "compression": "^1.7.2",
-    "connect-memcached": "^0.2.0",
+    "connect-memcached": "^1.0.0",
     "dustjs-helpers": "^1.7.4",
     "express": "^4.16.3",
     "express-session": "^1.15.6",
-    "passport": "^0.3.2",
-    "passport-google-oauth20": "^1.0.0"
+    "passport": "^0.4.2",
+    "passport-google-oauth20": "^2.0.0"
   }
 }
