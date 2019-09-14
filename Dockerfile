@@ -1,4 +1,4 @@
-FROM node:latest
+FROM node:10
 
 # Copy everything in.
 COPY . /app/
