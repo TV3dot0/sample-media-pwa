@@ -17,7 +17,7 @@
 
 'use strict';
 
-import ServiceWorkerInstaller from './helpers/service-worker-installer';
+import ServiceWorkerInstaller from './helpers/service-worker-installer.js';
 import VideoPlayer from './video-player/video-player';
 import Toast from './helpers/toast';
 import LazyLoadImages from './helpers/lazy-load-images';
