@@ -202,7 +202,7 @@ class App {
 
     Array.from(links).forEach(link => {
       link.classList.remove('item--disabled');
-      link.removeEventListener('click', this._cancel);
+      link.removeEventListener('click', App._cancel);
     });
 
     return Promise.resolve();
@@ -222,12 +222,12 @@ class App {
           return;
         }
 
-        link.addEventListener('click', this._cancel);
+        link.addEventListener('click', App._cancel);
       });
     }));
   }
 
-  _onMenuClick (evt) {
+  static _onMenuClick (evt) {
     const menuActiveClass = 'menu__toggle--active';
     const menu = document.querySelector('.js-menu');
     if (evt.target === menu) {
@@ -237,7 +237,7 @@ class App {
     menu.classList.remove(menuActiveClass);
   }
 
-  _cancel (evt) {
+  static _cancel (evt) {
     evt.stopImmediatePropagation();
     evt.preventDefault();
   }
@@ -318,7 +318,7 @@ class App {
     this._videoPlayer.update();
   }
 
-  _ensureShakaSupport () {
+  static _ensureShakaSupport () {
     return shaka.Player.probeSupport().then(support => {
       return support.drm['com.widevine.alpha'].persistentState;
     });
@@ -334,7 +334,7 @@ class App {
     let offlineLicenseSupport = Promise.resolve(true);
     if (evt.detail.drm) {
       offlineLicenseSupport = offlineLicenseSupport
-          .then(_ => this._ensureShakaSupport())
+          .then(_ => App._ensureShakaSupport())
           .catch(_ => {
             // If the user cancels the prompt, assume that persistent licensing
             // is unavailable.
