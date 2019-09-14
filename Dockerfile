@@ -1,8 +1,15 @@
-# Start from the Cloud Node base.
-FROM gcr.io/google-appengine/nodejs
+FROM node:7
 
 # Copy everything in.
 COPY . /app/
 
+RUN chown -R node /app
+
 # Install!
-RUN npm --unsafe-perm install
+USER 'node'
+
+WORKDIR '/app'
+
+RUN npm i -s
+
+RUN npm i --dev
