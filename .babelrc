@@ -1,6 +1,6 @@
 {
   "presets": [
-    "es2015-rollup", "babili"
+    "env"
   ],
   "exclude": "node_modules/**",
   "extensions": [".js", ".ts"]
