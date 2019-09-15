@@ -49,7 +49,7 @@ const entries = [
 let cache;
 entries.forEach(entry => {
   rollup.rollup({
-    entry: `src/${entry}`,
+    input: `src/${entry}`,
     cache,
     plugins: [
       hash(),
