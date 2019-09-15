@@ -17,7 +17,7 @@
 
 'use strict';
 
-import ServiceWorkerInstaller from './helpers/service-worker-installer.js';
+import ServiceWorkerInstaller from './helpers/service-worker-installer';
 import VideoPlayer from './video-player/video-player';
 import Toast from './helpers/toast';
 import LazyLoadImages from './helpers/lazy-load-images';
@@ -142,7 +142,7 @@ class App {
       .then(videos => {
         return videos.reduce((prev, video) => {
           return prev.then(_ => {
-            if (!video.popular) {
+            if (!video.hasOwnProperty('popular') && video.popular) {
               return;
             }
 
